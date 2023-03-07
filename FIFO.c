@@ -5,7 +5,7 @@
 
 void MyFIFOInit(int size) {
 
-    fifo[size];
+    int fifo[size];
     int i;
     for(i = 0; i < size; i++){
         
