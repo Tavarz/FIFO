@@ -5,6 +5,8 @@
 #include <stdint.h>
 #include <math.h>
 
+
+
 void MyFIFOInit(int size);
 int MyFIFOInsert(int data);
 int MyFIFORemove();
