@@ -8,7 +8,7 @@
 
 
 void MyFIFOInit(int size);
-int MyFIFOInsert(int data);
+void MyFIFOInsert(int data);
 int MyFIFORemove();
 int MyFIFOPeep();
 int MyFIFOSize();
