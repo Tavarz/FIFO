@@ -19,7 +19,7 @@ void MyFIFOInit(int size) {
 }
 
 void MyFIFOInsert(int data) {
-    if(MyFIFOSize() == 0){
+    if(p > sizeoffifo)){
         printf("FIFO full!");
         exit();
     }
@@ -40,6 +40,5 @@ int MyFIFOPeep() {
 }
 
 int MyFIFOSize() {
-    size_t space = sizeof(fifo) - p;
-    return space;
+    return p-1;
 }
