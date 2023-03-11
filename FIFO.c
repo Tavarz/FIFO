@@ -33,6 +33,7 @@ void MyFIFOInit(int FIFO, int size) {
     {
         on[FIFO] = 1;
         FIFOSize[FIFO] = size;
+        MyFIFO[FIFO][size];
         for(int i = 0; i < size; i++){
             MyFIFO[FIFO][i] = 0;
         }
@@ -73,11 +74,31 @@ int MyFIFORemove(int FIFO) {
 }
 
 int MyFIFOPeep(int FIFO) {
-    return MyFIFO[FIFO][tail[FIFO]];
+    
+    if(on[FIFO] == 1){
+
+        return MyFIFO[FIFO][0];
+    
+    }
+    else
+    {
+        printf("FIFO %f not initialized.\n",FIFO);
+        return -1;
+    }
+
 }
 
 int MyFIFOSize(int FIFO) {
-    return p-1;
+    if(on[FIFO] == 1){
+
+        return tail[FIFO];
+    
+    }
+    else
+    {
+        printf("FIFO %f not initialized.\n",FIFO);
+        return -1;
+    }
 }
 
 #endif
