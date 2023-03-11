@@ -5,12 +5,11 @@
 #include <stdint.h>
 #include <math.h>
 
-
-
-void MyFIFOInit(int size);
-void MyFIFOInsert(int data);
-int MyFIFORemove();
-int MyFIFOPeep();
-int MyFIFOSize();
+void MyFIFOStart(void);
+void MyFIFOInit(int FIFO, int size); 
+void MyFIFOInsert(int FIFO,int data); 
+int MyFIFORemove(int FIFO); 
+int MyFIFOPeep(int FIFO);
+int MyFIFOSize(int FIFO);
 
 #endif
