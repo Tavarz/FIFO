@@ -43,7 +43,7 @@ void MyFIFOInit(int FIFO, int size) {
 void MyFIFOInsert(int FIFO,int data) {
     if(on[FIFO] == 1) {
         if(tail[FIFO] == FIFOSize[FIFO]){
-            printf("FIFO %f is full.\n",FIFO);
+            printf("FIFO %d is full.\n",FIFO);
         }
         else{
             MyFIFO[FIFO][tail[FIFO]] = data;
@@ -52,24 +52,29 @@ void MyFIFOInsert(int FIFO,int data) {
     }
     else
     {
-        printf("FIFO %f not initialized.\n",FIFO);
+        printf("FIFO %d not initialized.\n",FIFO);
     }
 }
 
 int MyFIFORemove(int FIFO) {
+    int data;
     if(on[FIFO] == 1) {
-        if(tail[FIFO] != 0) {
-            int data = MyFIFO[FIFO][0];
+        if(tail[FIFO] >= 0) {
+            data = MyFIFO[FIFO][0];
+            MyFIFO[FIFO][0] = 0;
 
             for(int i = 1; i < tail[FIFO]; i++) {
-                MyFIFO[FIFO][i-1] = MyFIFO[FIFO][i];
+                MyFIFO[FIFO][i-1] = MyFIFO[FIFO][i];        
             }
             tail[FIFO] = tail[FIFO] - 1;
+            MyFIFO[FIFO][tail[FIFO]] = 0;
+            return data;
         }
     }
     else
     {
-        printf("FIFO %f not initialized.\n",FIFO);
+        printf("FIFO %d is empty.\n",FIFO);
+        return -1;
     }
 }
 
@@ -82,7 +87,7 @@ int MyFIFOPeep(int FIFO) {
     }
     else
     {
-        printf("FIFO %f not initialized.\n",FIFO);
+        printf("FIFO %d not initialized.\n",FIFO);
         return -1;
     }
 
@@ -96,7 +101,7 @@ int MyFIFOSize(int FIFO) {
     }
     else
     {
-        printf("FIFO %f not initialized.\n",FIFO);
+        printf("FIFO %d not initialized.\n",FIFO);
         return -1;
     }
 }
