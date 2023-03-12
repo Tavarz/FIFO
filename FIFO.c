@@ -59,7 +59,7 @@ void MyFIFOInsert(int FIFO,int data) {
 int MyFIFORemove(int FIFO) {
     int data;
     if(on[FIFO] == 1) {
-        if(tail[FIFO] >= 0) {
+        if(tail[FIFO] > 0) {
             data = MyFIFO[FIFO][0];
             MyFIFO[FIFO][0] = 0;
 
@@ -69,11 +69,12 @@ int MyFIFORemove(int FIFO) {
             tail[FIFO] = tail[FIFO] - 1;
             MyFIFO[FIFO][tail[FIFO]] = 0;
             return data;
+        }else{
+            printf("FIFO %d is empty.\n",FIFO);
+            return -1;
         }
-    }
-    else
-    {
-        printf("FIFO %d is empty.\n",FIFO);
+    }else{
+        printf("FIFO %d not initialized.\n",FIFO);
         return -1;
     }
 }
