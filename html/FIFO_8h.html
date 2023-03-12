@@ -5,7 +5,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=11"/>
 <meta name="generator" content="Doxygen 1.9.7"/>
 <meta name="viewport" content="width=device-width, initial-scale=1"/>
-<title>My Project: FIFO.h File Reference</title>
+<title>FIFO - Assignment 1: FIFO.h File Reference</title>
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="jquery.js"></script>
 <script type="text/javascript" src="dynsections.js"></script>
@@ -21,7 +21,7 @@
  <tbody>
  <tr id="projectrow">
   <td id="projectalign">
-   <div id="projectname">My Project
+   <div id="projectname">FIFO - Assignment 1
    </div>
   </td>
  </tr>
@@ -75,7 +75,7 @@ $(function() {
 </div><!--header-->
 <div class="contents">
 
-<p>Contains functions to initialize a FIFO and insert/remove elements from it Also has functions to return the oldest element on the fifo and return its size.  
+<p>Contains functions to initialize a FIFO and insert/remove elements from it Also has functions to return the oldest element on the fifo and return its size The maximum number of FIFOs is 10.  
 <a href="#details">More...</a></p>
 <div class="textblock"><code>#include &lt;stdio.h&gt;</code><br />
 <code>#include &lt;stdint.h&gt;</code><br />
@@ -95,7 +95,7 @@ Functions</h2></td></tr>
 <tr class="memdesc:a819f6d0c6aef46e791e8199272e47a19"><td class="mdescLeft">&#160;</td><td class="mdescRight">Adds an elemnt to the FIFO.  <br /></td></tr>
 <tr class="separator:a819f6d0c6aef46e791e8199272e47a19"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a72d94a1f071f7b5a2a71033bb8e29a92"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="FIFO_8h.html#a72d94a1f071f7b5a2a71033bb8e29a92">MyFIFORemove</a> (int FIFO)</td></tr>
-<tr class="memdesc:a72d94a1f071f7b5a2a71033bb8e29a92"><td class="mdescLeft">&#160;</td><td class="mdescRight">Removes an element from the FIFO.  <br /></td></tr>
+<tr class="memdesc:a72d94a1f071f7b5a2a71033bb8e29a92"><td class="mdescLeft">&#160;</td><td class="mdescRight">Removes the oldest element from the FIFO.  <br /></td></tr>
 <tr class="separator:a72d94a1f071f7b5a2a71033bb8e29a92"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a5644451615d0e035c082c264f5d87796"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="FIFO_8h.html#a5644451615d0e035c082c264f5d87796">MyFIFOPeep</a> (int FIFO)</td></tr>
 <tr class="memdesc:a5644451615d0e035c082c264f5d87796"><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns the oldest element on the FIFO without removing it.  <br /></td></tr>
@@ -105,7 +105,7 @@ Functions</h2></td></tr>
 <tr class="separator:aec3967114623362db784e266fcef5bbb"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
-<div class="textblock"><p>Contains functions to initialize a FIFO and insert/remove elements from it Also has functions to return the oldest element on the fifo and return its size. </p>
+<div class="textblock"><p>Contains functions to initialize a FIFO and insert/remove elements from it Also has functions to return the oldest element on the fifo and return its size The maximum number of FIFOs is 10. </p>
 <dl class="section author"><dt>Author</dt><dd>: Bernardo Tavares <a href="#" onclick="location.href='mai'+'lto:'+'ber'+'na'+'rdo'+'t@'+'ua.'+'pt'; return false;">berna<span class="obfuscator">.nosp@m.</span>rdot<span class="obfuscator">.nosp@m.</span>@ua.p<span class="obfuscator">.nosp@m.</span>t</a> and João Rodrigues <a href="#" onclick="location.href='mai'+'lto:'+'jpc'+'r@'+'ua.'+'pt'; return false;">jpcr@<span class="obfuscator">.nosp@m.</span>ua.p<span class="obfuscator">.nosp@m.</span>t</a></dd></dl>
 <dl class="section date"><dt>Date</dt><dd>11 March 2023 </dd></dl>
 </div><h2 class="groupheader">Function Documentation</h2>
@@ -175,7 +175,7 @@ Functions</h2></td></tr>
 </div><div class="memdoc">
 
 <p>Adds an elemnt to the FIFO. </p>
-<p>Initially checks if the chosen FIFO is full with the help of the array's that save all FIFO's sizes and tails. If it's full prints a message saying it's full. If it's not full adds the new element to the last position in the array and increments the tail of this FIFO.</p>
+<p>Initially checks if the chosen FIFO has been initialized, then checks if the FIFO is full with the help of the array that save all FIFO's sizes and tails. If it's full prints a message saying it's full. If it's not full adds the new element to the last position in the array and increments the tail of this FIFO.</p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
     <tr><td class="paramname">FIFO</td><td>FIFO array number in the array of FIFOs </td></tr>
@@ -204,14 +204,14 @@ Functions</h2></td></tr>
 </div><div class="memdoc">
 
 <p>Returns the oldest element on the FIFO without removing it. </p>
-<p>Checks if the FIFO has been initialized before: If it hasn't prints "FIFO not initialized" If it has returns the FIFO's first element</p>
+<p>Checks if the FIFO has been initialized before: If it hasn't prints "FIFO not initialized" If it has returns the FIFO's oldest element</p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
     <tr><td class="paramname">FIFO</td><td>FIFO array number in the array of FIFOs </td></tr>
   </table>
   </dd>
 </dl>
-<dl class="section return"><dt>Returns</dt><dd>Returns the FIFO's first element </dd></dl>
+<dl class="section return"><dt>Returns</dt><dd>Returns the FIFO's oldest element </dd></dl>
 
 </div>
 </div>
@@ -231,15 +231,15 @@ Functions</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p>Removes an element from the FIFO. </p>
-<p>Saves the FIFO's first value in a variable "data", sets the first value to 0 and then shifts all values to the left (1 position). After it updates FIFO's tail value by decrementing the tail value by 1 and sets the last value of the FIFO to 0.</p>
+<p>Removes the oldest element from the FIFO. </p>
+<p>Checks if the FIFO has been initialized before: If it hasn't prints "FIFO not initialized" Saves the FIFO's first value in a variable "data", sets the first value to 0 and then shifts all values to the left (1 position). After it sets the tail value to 0 and updates FIFO's tail value by decrementing the tail value by 1.</p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
     <tr><td class="paramname">FIFO</td><td>FIFO array number in the array of FIFOs </td></tr>
   </table>
   </dd>
 </dl>
-<dl class="section return"><dt>Returns</dt><dd>Returns the element being removed </dd></dl>
+<dl class="section return"><dt>Returns</dt><dd>Returns the oldest element </dd></dl>
 
 </div>
 </div>
