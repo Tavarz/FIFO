@@ -9,7 +9,7 @@ int main(void) {
         scanf("%d",&option);
         switch(option)  {
             case(1):
-                printf("FIFO:");
+                printf("FIFO(1 to 10):");
                 scanf("%d",&fifo);
                 printf("FIFO size:");
                 scanf("%d",&size);
