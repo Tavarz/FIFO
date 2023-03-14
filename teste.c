@@ -29,42 +29,42 @@
  */
 
 int main(void) {
-    int option,size,data,free,fifo;
+    int option,size,data,free,fifo,misk;
     while(1) {
         printf("\nChoose an option: \n1:MyFIFOInit()\n2:MyFIFOInsert()\n3:MyFIFORemove()\n4:MyFIFOPeep\n5:MyFIFOSize\n\n");
-        scanf("%d",&option);
+        misk = scanf("%d",&option);
         switch(option)  {
             case(1):
                 printf("FIFO(1 to 10):");
-                scanf("%d",&fifo);
+                misk = scanf("%d",&fifo);
                 printf("FIFO size:");
-                scanf("%d",&size);
+                misk = scanf("%d",&size);
                 MyFIFOInit(fifo,size);
                 break;
             case(2):
                 printf("FIFO:");
-                scanf("%d",&fifo);
+                misk = scanf("%d",&fifo);
                 printf("Insert data: ");
-                scanf("%d",&data);
+                misk = scanf("%d",&data);
                 MyFIFOInsert(fifo,data);
                 break;
             case(3):
                 printf("FIFO:");
-                scanf("%d",&fifo);
+                misk = scanf("%d",&fifo);
                 data = MyFIFORemove(fifo);
                 printf("%d\n",data);
                 break;
             case(4):
                 printf("FIFO:");
-                scanf("%d",&fifo);
+                misk = scanf("%d",&fifo);
                 data = MyFIFOPeep(fifo);
                 printf("%d\n",data);
                 break;
             case(5):
                 printf("FIFO:");
-                scanf("%d",&fifo);
-                data = MyFIFOSize(fifo);
-                printf("%d\n",data);
+                misk = scanf("%d",&fifo);
+                free = MyFIFOSize(fifo);
+                printf("%d\n",free);
                 break;
             default:
                 printf("Not a valid option!\n");

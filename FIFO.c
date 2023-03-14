@@ -7,7 +7,7 @@
 #define MAX_FIFO 10
 
 static int start=0;
-static int MyFIFO[MAX_FIFO-1][0];
+static int MyFIFO[MAX_FIFO-1][1];
 static int on[MAX_FIFO-1];
 static int FIFOSize[MAX_FIFO-1];
 static int tail[MAX_FIFO-1];
@@ -34,7 +34,7 @@ void MyFIFOInit(int FIFO, int size) {
     {
         on[FIFO] = 1;
         FIFOSize[FIFO] = size;
-        MyFIFO[FIFO][size];
+        //MyFIFO[FIFO][size];
         for(int i = 0; i < size; i++){
             MyFIFO[FIFO][i] = 0;
         }
