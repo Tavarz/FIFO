@@ -1,16 +1,19 @@
-# This is a comment
+DEFAULT_TARGET=teste
+OBJECTS = FIFO.o teste.o
+
+CFLAGS = -g -Wall -O3
+LDLIBS=
+CC=gcc
+
+
 # Generate application
-teste: teste.o FIFO.o
-	gcc -o teste teste.o FIFO.o
+$(DEFAULT_TARGET): $(OBJECTS)
+	$(CC) $(CFLAGS) -o $(DEFAULT_TARGET) $(OBJECTS)
 	
-#generate FIFO.o
-FIFO.o: FIFO.c FIFO.h
-	gcc -c FIFO.c
-	
-#generate teste.o
-teste.o: teste.c
-	gcc -c teste.c
-	
+
 clean:
-	rm *.o
+	rm -f *.o $(DEFAULT_TARGET)
+
+run:	$(DEFAULT_TARGET)
+	./$(DEFAULT_TARGET)
 
