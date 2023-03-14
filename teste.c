@@ -1,6 +1,32 @@
+/** @file teste.c
+ * @brief teste.c file brief decription 
+ *
+ * This script creates an interface to interact with an array of FIFOs 
+ * 
+ * @author Bernardo Tavares bernardot@ua.pt and João Rodrigues jpcr@ua.pt
+ * @date 14 March 2023
+ * @bug No known bugs.
+ */
+
+/* Includes */
 #include "FIFO.h"
 #include <stdio.h>
 #include <stdint.h>
+
+/**
+ * @brief Brief decription of main().
+ *
+ * In an infinite loop creates a menu that gives the user
+ * different ways to interact with a FIFO :
+ * - Initialize a FIFO
+ * - Insert elements
+ * - Remove Elements
+ * - Peep Elements
+ * - Return FIFO's size
+ * Main has no input arguments.
+ * 
+ * @return main() always returns 0
+ */
 
 int main(void) {
     int option,size,data,free,fifo;
@@ -40,6 +66,10 @@ int main(void) {
                 data = MyFIFOSize(fifo);
                 printf("%d\n",data);
                 break;
+            default:
+                printf("Not a valid option!\n");
+                break;
+            
         }
     }
 

@@ -2,7 +2,7 @@
  * \file:   FIFO.h
  * \author: Bernardo Tavares <bernardot@ua.pt> and João Rodrigues <jpcr@ua.pt>
  *
- * \date 11 March 2023
+ * \date 14 March 2023
  * 
  * \brief Contains functions to initialize a FIFO and insert/remove elements from it
  *        Also has functions to return the oldest element on the fifo and return its size
